@@ -34,7 +34,7 @@ def tweetMsg():
     except Exception as e:
         print("Exception occured: ", e)
 
-# Tweet london weather every 15 minutes
+# Tweet london weather every 6 hours
 while(True):
     tweetMsg()
-    time.sleep(900)
+    time.sleep(21600)
