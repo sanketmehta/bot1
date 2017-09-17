@@ -1,17 +1,23 @@
 # Dependencies
-import pandas as pd
+# import pandas as pd
 import tweepy
 import time
 import json
 import random
+import os
 
 # Extract API key from external json file
-keyPairs = open('../../keys/appkey.json')
-keyPairs_json = json.load(keyPairs)
-consumer_key = keyPairs_json['twtconkey']
-consumer_secret = keyPairs_json['twtconsec']
-access_token = keyPairs_json['twtacctok']
-access_token_secret = keyPairs_json['twtaccsec']
+# keyPairs = open('../../keys/appkey.json')
+# keyPairs_json = json.load(keyPairs)
+# consumer_key = keyPairs_json['twtconkey']
+# consumer_secret = keyPairs_json['twtconsec']
+# access_token = keyPairs_json['twtacctok']
+# access_token_secret = keyPairs_json['twtaccsec']
+consumer_key = os.environ['twtconkey']
+consumer_secret = os.environ['twtconsec']
+access_token = os.environ['twtacctok']
+access_token_secret = os.environ['twtaccsec']
+
 
 # Setup Tweepy API Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
